@@ -7,8 +7,8 @@ from typing import Dict, List, Optional, Tuple
 
 import torch
 
-from .model.nn import Net
-from .model.ps import Ps
+from model.nn import Net
+from model.ps import Ps
 
 logging.basicConfig(
     format='%(asctime)s : %(levelname)s : %(message)s',
@@ -216,4 +216,5 @@ def push_model(model_output_dir, model_name, expected_batch_size, device_type):
 
     logging.info("Finished converting model")
 
-
+if __name__ == '__main__':
+    push_model(".", "test_model", 200, "gpu")
